@@ -6,7 +6,7 @@ export interface State {
   failure: boolean;
 }
 
-export const initialState: State {
+export const initialState: State = {
   entities: [],
   failure: false
 };

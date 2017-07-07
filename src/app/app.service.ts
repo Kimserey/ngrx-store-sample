@@ -6,22 +6,54 @@ import { Group } from './models/group';
 
 @Injectable()
 export class AppService {
-  getUserProfile(userId: string): Observable<Profile> {
-    return of(<Profile>{
-      userId: userId,
+  users: { [key: string]: Profile } = {};
+  groups: { [key: string]: Group } = {};
+
+  constructor() {
+    this.users['kim'] = {
+      userId: 'kim',
       address: '29 avenue street',
       groups: [ 'group1', 'group2' ],
-      name: 'Kim'
-    });
-  }
+      name: 'Kimserey'
+    };
 
-  getGroup(userId: string): Observable<Group[]> {
-    return of([<Group>{
+    this.users['mike'] = {
+      userId: 'mike',
+      address: '103 eastern ed',
+      groups: [ 'group2' ],
+      name: 'Mike'
+    };
+
+    this.users['joe'] = {
+      userId: 'joe',
+      address: '3 balcony dolet',
+      groups: [ 'group1' ],
+      name: 'Joe'
+    };
+
+    this.groups['group1'] = {
       groupId: 'group1',
       name: 'Football avenue street'
-    }, <Group>{
+    };
+
+    this.groups['group2'] = {
       groupId: 'group2',
       name: 'Basketball gottam'
-    }]);
+    };
+  }
+
+  getUserProfile(userId: string): Observable<Profile> {
+    return of(this.users[userId]);
+  }
+
+  getGroups(userId: string): Observable<Group[]> {
+    return of(this.users[userId]
+      .groups
+      .reduce((groups, groupId) =>
+        [
+          ...groups,
+          this.groups[groupId]
+        ], [])
+    );
   }
 }

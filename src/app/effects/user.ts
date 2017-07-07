@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { AppService } from '../app.service';
+import * as group from '../actions/group';
 import * as user from '../actions/user';
 
 @Injectable()
@@ -17,7 +18,10 @@ export class UserEffects {
     .map(toPayload)
     .switchMap(payload => {
       return this.service.getUserProfile(payload)
-        .map(profile => new user.LoadProfileSuccessAction(profile))
+        .switchMap(profile => [
+          new user.LoadProfileSuccessAction(profile),
+          new group.LoadAction(profile.userId)
+        ])
         .catch(() => of(new user.LoadProfileFailAction()));
     });
 

@@ -15,8 +15,8 @@ export class GroupEffects {
   load$: Observable<Action> = this.actions$
     .ofType(group.LOAD)
     .map(toPayload)
-    .switchMap(payload => {
-      return this.service.getUserProfile(payload)
+    .switchMap(userId => {
+      return this.service.getGroups(userId)
         .map(groups => new group.LoadSuccessAction(groups))
         .catch(() => of(new group.LoadFailAction()));
     });

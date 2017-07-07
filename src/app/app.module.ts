@@ -11,10 +11,20 @@ import { AppService } from './app.service';
 import { GroupEffects } from './effects/group';
 import { UserEffects } from './effects/user';
 import { reducer } from './reducers';
+import { GroupListingComponent } from './components/group-listing';
+import { GroupsContainer } from './containers/groups';
+import { SelectUserContainer } from './containers/select-user';
+import { ProfileContainer } from './containers/profile';
+import { ProfileComponent } from './components/profile';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProfileComponent,
+    ProfileContainer,
+    SelectUserContainer,
+    GroupsContainer,
+    GroupListingComponent
   ],
   imports: [
     BrowserModule,
