@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
+import { AppService } from './app.service';
 import { reducer } from './reducers';
 
 @NgModule({
@@ -19,7 +20,7 @@ import { reducer } from './reducers';
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
