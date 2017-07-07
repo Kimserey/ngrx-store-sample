@@ -31,3 +31,5 @@ export function reducer(state = initialState, action: user.Actions) {
     }
   }
 }
+
+export const getProfile = (state: State) => state.profile;
