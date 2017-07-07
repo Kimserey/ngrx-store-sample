@@ -2,18 +2,11 @@ import { Action } from '@ngrx/store';
 import { Profile } from '../models/user';
 
 export const SELECT = '[User] Select';
-export const LOAD_PROFILE = '[User] Load Profile';
 export const LOAD_PROFILE_SUCCESS = '[User] Load Profile Success';
 export const LOAD_PROFILE_FAIL = '[User] Load Profile Fail';
 
 export class SelectAction implements Action {
   readonly type = SELECT;
-
-  constructor(public payload: string) { }
-}
-
-export class LoadProfileAction implements Action {
-  readonly type = LOAD_PROFILE;
 
   constructor(public payload: string) { }
 }
@@ -32,6 +25,5 @@ export class LoadProfileFailAction implements Action {
 
 export type Actions
   = SelectAction
-  | LoadProfileAction
   | LoadProfileSuccessAction
   | LoadProfileFailAction;
