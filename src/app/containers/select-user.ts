@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import * as user from '../actions/user';
 import * as fromRoot from '../reducers';
@@ -14,7 +15,7 @@ import * as fromRoot from '../reducers';
   styles: []
 })
 export class SelectUserContainer implements OnInit {
-  users$: string[];
+  users$: Observable<string[]>;
 
   constructor(private store: Store<fromRoot.State>) { }
 
@@ -23,5 +24,7 @@ export class SelectUserContainer implements OnInit {
   }
 
   ngOnInit() {
+    this.store.dispatch(new user.LoadAllAction());
+    this.users$ = this.store.select(fromRoot.getUsers);
   }
 }

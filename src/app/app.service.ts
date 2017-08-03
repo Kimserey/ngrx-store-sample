@@ -10,22 +10,22 @@ export class AppService {
   groups: { [key: string]: Group } = {};
 
   constructor() {
-    this.users['kim'] = {
-      userId: 'kim',
+    this.users['Kim'] = {
+      userId: 'Kim',
       address: '29 avenue street',
       groups: [ 'group1', 'group2' ],
       name: 'Kimserey'
     };
 
-    this.users['mike'] = {
-      userId: 'mike',
+    this.users['Mike'] = {
+      userId: 'Mike',
       address: '103 eastern ed',
       groups: [ 'group2' ],
       name: 'Mike'
     };
 
-    this.users['joe'] = {
-      userId: 'joe',
+    this.users['Joe'] = {
+      userId: 'Joe',
       address: '3 balcony dolet',
       groups: [ 'group1' ],
       name: 'Joe'

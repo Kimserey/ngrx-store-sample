@@ -17,7 +17,7 @@ export class UserEffects {
     .ofType(user.LOAD_ALL)
     .switchMap(() => {
       return this.service.getAll()
-        .map(users => new user.LoadAllAction(users))
+        .map(users => new user.LoadAllSuccessAction(users))
         .catch(() => of(new user.LoadAllFailAction()));
     });
 
