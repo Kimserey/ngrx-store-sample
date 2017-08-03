@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as user from '../actions/user';
 import * as fromRoot from '../reducers';
@@ -8,17 +8,20 @@ import * as fromRoot from '../reducers';
   template: `
     <select (change)="select($event.target.value)">
       <option value=""> -- Select a user -- </option>
-      <option value="joe">Joe</option>
-      <option value="kim">Kim</option>
-      <option value="mike">Mike</option>
+      <option *ngFor="let user of users$ | async">{{user}}</option>
     </select>
   `,
   styles: []
 })
-export class SelectUserContainer {
+export class SelectUserContainer implements OnInit {
+  users$: string[];
+
   constructor(private store: Store<fromRoot.State>) { }
 
   select(userId: string) {
     this.store.dispatch(new user.SelectAction(userId));
+  }
+
+  ngOnInit() {
   }
 }
