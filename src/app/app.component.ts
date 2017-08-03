@@ -3,9 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <app-select-user></app-select-user>
-    <app-user-profile></app-user-profile>
-    <app-groups></app-groups>
+    <router-outlet></router-outlet>
   `
 })
 export class AppComponent { }
