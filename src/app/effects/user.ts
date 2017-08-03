@@ -13,6 +13,15 @@ import * as user from '../actions/user';
 @Injectable()
 export class UserEffects {
   @Effect()
+  loadAll$: Observable<Action> = this.actions$
+    .ofType(user.LOAD_ALL)
+    .switchMap(() => {
+      return this.service.getAll()
+        .map(users => new user.LoadAllAction(users))
+        .catch(() => of(new user.LoadAllFailAction()));
+    });
+
+  @Effect()
   load$: Observable<Action> = this.actions$
     .ofType(user.SELECT)
     .map(toPayload)

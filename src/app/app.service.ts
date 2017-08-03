@@ -42,6 +42,10 @@ export class AppService {
     };
   }
 
+  getAll(): Observable<string[]> {
+    return of(['Kim', 'Mike', 'Joe']);
+  }
+
   getUserProfile(userId: string): Observable<Profile> {
     return of(this.users[userId]);
   }
