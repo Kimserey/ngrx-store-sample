@@ -46,5 +46,8 @@ export class LoadProfileFailAction implements Action {
 
 export type Actions
   = SelectAction
+  | LoadAllAction
+  | LoadAllSuccessAction
+  | LoadAllFailAction
   | LoadProfileSuccessAction
   | LoadProfileFailAction;
