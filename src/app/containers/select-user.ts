@@ -24,7 +24,6 @@ export class SelectUserContainer implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(new user.LoadAllAction());
     this.users$ = this.store.select(fromRoot.getUsers);
   }
 }

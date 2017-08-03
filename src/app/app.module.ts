@@ -13,16 +13,18 @@ import { GroupEffects } from './effects/group';
 import { UserEffects } from './effects/user';
 import { reducer } from './reducers';
 import { GroupListingComponent } from './components/group-listing';
+import { MainContainer } from './containers/main';
 import { GroupsContainer } from './containers/groups';
 import { SelectUserContainer } from './containers/select-user';
 import { ProfileContainer } from './containers/profile';
 import { ProfileComponent } from './components/profile';
-import { routes } from 'app/route';
 import { UserLoadedGuard } from './guards/user-loaded';
+import { routes } from 'app/route';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MainContainer,
     ProfileComponent,
     ProfileContainer,
     SelectUserContainer,

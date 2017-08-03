@@ -6,6 +6,6 @@ export const routes: Routes = [
   {
     path: '',
     canActivate: [UserLoadedGuard],
-    component: MainContainer
+    component: MainContainer,
   }
 ];
