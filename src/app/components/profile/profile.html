@@ -12,7 +12,12 @@
       <div class="col-sm-9">{{ profile.lastname }}</div>
     </div>
   </div>
-  <app-profile-name *ngIf="editedField === 'name'"></app-profile-name>
+  <app-profile-name *ngIf="editedField === 'name'"
+    [defaultFirstname]="profile.firstname"
+    [defaultLastname]="profile.lastname"
+    (submitForm)="submitName($event)"
+    (cancelForm)="resetEdit()">
+  </app-profile-name>
   <hr/>
 
   <div *ngIf="editedField !== 'address'">

@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="submit()">
   <div class="form-group">
     <label for="firstname">Firstname</label>
     <input id="firstname" type="text" class="form-control" formControlName="firstname" />
@@ -7,6 +7,6 @@
     <label for="lastname">Lastname</label>
     <input id="lastname" type="text" class="form-control" formControlName="lastname" />
   </div>
-  <button pButton type="button" class="ui-button-info" icon="fa-times" label="Cancel" (click)="onCancel()"></button>
+  <button pButton type="button" class="ui-button-info" icon="fa-times" label="Cancel" (click)="cancel()"></button>
   <button pButton type="submit" class="ui-button-success" icon="fa-floppy-o" label="Save" [disabled]="!form.valid"></button>
 </form>

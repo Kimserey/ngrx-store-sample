@@ -8,3 +8,8 @@ export interface Profile {
   mobileNumber: string;
   groups: string[];
 }
+
+export interface ProfileName {
+  firstname: string;
+  lastname: string;
+}

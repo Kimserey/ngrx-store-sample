@@ -1,5 +1,5 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import { Profile } from '../../models/user';
+import { Profile, ProfileName } from '../../models/user';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +11,15 @@ export class ProfileComponent {
   @Input() editedField: string;
   @Output() changeEditField = new EventEmitter<string>();
 
+  submitName(name: ProfileName) {
+
+  }
+
   toggleEdit(field) {
     this.changeEditField.emit(field);
+  }
+
+  resetEdit() {
+    this.changeEditField.emit(null);
   }
 }
