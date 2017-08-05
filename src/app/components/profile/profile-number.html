@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="p-3 bg-faded">
+  <div class="form-group row">
+    <label for="home" class="col-sm-3 col-form-label"><strong>Home number</strong></label>
+    <div class="col-sm-9">
+      <input id="home" type="text" class="form-control" formControlName="homeNumber" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="mobile" class="col-sm-3 col-form-label"><strong>Mobile number</strong></label>
+    <div class="col-sm-9">
+      <input id="mobile" type="text" class="form-control" formControlName="mobileNumber" />
+    </div>
+  </div>
+  <div class="text-right">
+    <button pButton type="button" class="ui-button-info" icon="fa-times" label="Cancel" (click)="cancel()"></button>
+    <button pButton type="submit" class="ui-button-success" icon="fa-floppy-o" label="Save" [disabled]="!form.valid"></button>
+  </div>
+</form>

@@ -13,3 +13,13 @@ export interface ProfileName {
   firstname: string;
   lastname: string;
 }
+
+export interface ProfileAddress {
+  address: string;
+  postalcode: string;
+}
+
+export interface ProfileNumber {
+  homeNumber: string;
+  mobileNumber: string;
+}

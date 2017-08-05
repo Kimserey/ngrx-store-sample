@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="p-3 bg-faded">
+  <div class="form-group row">
+    <label for="address" class="col-sm-3 col-form-label"><strong>Address</strong></label>
+    <div class="col-sm-9">
+      <input id="address" type="text" class="form-control" formControlName="address" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="postalcode" class="col-sm-3 col-form-label"><strong>Postal code</strong></label>
+    <div class="col-sm-9">
+      <input id="postalcode" type="text" class="form-control" formControlName="postalcode" />
+    </div>
+  </div>
+  <div class="text-right">
+    <button pButton type="button" class="ui-button-info" icon="fa-times" label="Cancel" (click)="cancel()"></button>
+    <button pButton type="submit" class="ui-button-success" icon="fa-floppy-o" label="Save" [disabled]="!form.valid"></button>
+  </div>
+</form>

@@ -33,6 +33,12 @@
       <div class="col-sm-9">{{ profile.postalcode }}</div>
     </div>
   </div>
+  <app-profile-address *ngIf="editedField === 'address'"
+    [defaultAddress]="profile.address"
+    [defaultPostalcode]="profile.postalcode"
+    (submitForm)="submitName($event)"
+    (cancelForm)="resetEdit()">
+  </app-profile-address>
   <hr/>
 
   <div *ngIf="editedField !== 'number'">
@@ -48,4 +54,10 @@
       <div class="col-sm-9">{{ profile.mobileNumber }}</div>
     </div>
   </div>
+  <app-profile-number *ngIf="editedField === 'number'"
+    [defaultHomeNumber]="profile.homeNumber"
+    [defaultMobileNumber]="profile.mobileNumber"
+    (submitForm)="submitName($event)"
+    (cancelForm)="resetEdit()">
+  </app-profile-number>
 </p-panel>

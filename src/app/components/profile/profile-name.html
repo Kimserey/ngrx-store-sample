@@ -1,12 +1,18 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
-  <div class="form-group">
-    <label for="firstname">Firstname</label>
-    <input id="firstname" type="text" class="form-control" formControlName="firstname" />
+<form [formGroup]="form" (ngSubmit)="submit()" class="p-3 bg-faded">
+  <div class="form-group row">
+    <label for="firstname" class="col-sm-3 col-form-label"><strong>Firstname</strong></label>
+    <div class="col-sm-9">
+      <input id="firstname" type="text" class="form-control" formControlName="firstname" />
+    </div>
   </div>
-  <div class="form-group">
-    <label for="lastname">Lastname</label>
-    <input id="lastname" type="text" class="form-control" formControlName="lastname" />
+  <div class="form-group row">
+    <label for="lastname" class="col-sm-3 col-form-label"><strong>Lastname</strong></label>
+    <div class="col-sm-9">
+      <input id="lastname" type="text" class="form-control" formControlName="lastname" />
+    </div>
   </div>
-  <button pButton type="button" class="ui-button-info" icon="fa-times" label="Cancel" (click)="cancel()"></button>
-  <button pButton type="submit" class="ui-button-success" icon="fa-floppy-o" label="Save" [disabled]="!form.valid"></button>
+  <div class="text-right">
+    <button pButton type="button" class="ui-button-info" icon="fa-times" label="Cancel" (click)="cancel()"></button>
+    <button pButton type="submit" class="ui-button-success" icon="fa-floppy-o" label="Save" [disabled]="!form.valid"></button>
+  </div>
 </form>
