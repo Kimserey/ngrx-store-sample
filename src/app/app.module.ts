@@ -20,7 +20,7 @@ import { MainContainer } from './containers/main';
 import { GroupsContainer } from './containers/groups';
 import { SelectUserContainer } from './containers/select-user';
 import { ProfileContainer } from './containers/profile';
-import { ProfileComponent } from './components/profile/profile';
+import { ProfileComponent, ProfileAddressComponent, ProfileNameComponent, ProfileNumberComponent } from './components/profile';
 import { UserLoadedGuard } from './guards/user-loaded';
 import { routes } from 'app/route';
 
@@ -30,6 +30,9 @@ import { routes } from 'app/route';
     MainContainer,
     ProfileComponent,
     ProfileContainer,
+    ProfileAddressComponent,
+    ProfileNameComponent,
+    ProfileNumberComponent,
     SelectUserContainer,
     GroupsContainer,
     GroupListingComponent
