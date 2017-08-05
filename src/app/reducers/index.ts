@@ -23,6 +23,7 @@ export function reducer(state: any, action: any) {
 export const getUserState = (state: State) => state.user;
 export const getUserProfile = createSelector(getUserState, fromUser.getProfile);
 export const getUsers = createSelector(getUserState, fromUser.getUsers);
+export const getUserEditedField = createSelector(getUserState, fromUser.getEditedField);
 
 export const getGroupState = (state: State) => state.group;
 export const getGroups = createSelector(getGroupState, fromGroup.getGroups);

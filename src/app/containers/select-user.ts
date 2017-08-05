@@ -8,7 +8,6 @@ import * as fromRoot from '../reducers';
   selector: 'app-select-user',
   template: `
     <select (change)="select($event.target.value)">
-      <option value=""> -- Select a user -- </option>
       <option *ngFor="let user of users$ | async">{{user}}</option>
     </select>
   `,
@@ -16,7 +15,6 @@ import * as fromRoot from '../reducers';
 })
 export class SelectUserContainer implements OnInit {
   users$: Observable<string[]>;
-
   constructor(private store: Store<fromRoot.State>) { }
 
   select(userId: string) {

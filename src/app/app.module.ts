@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
@@ -6,6 +7,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+import { ButtonModule, DropdownModule, PanelModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -17,7 +20,7 @@ import { MainContainer } from './containers/main';
 import { GroupsContainer } from './containers/groups';
 import { SelectUserContainer } from './containers/select-user';
 import { ProfileContainer } from './containers/profile';
-import { ProfileComponent } from './components/profile';
+import { ProfileComponent } from './components/profile/profile';
 import { UserLoadedGuard } from './guards/user-loaded';
 import { routes } from 'app/route';
 
@@ -32,6 +35,7 @@ import { routes } from 'app/route';
     GroupListingComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -39,7 +43,10 @@ import { routes } from 'app/route';
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     EffectsModule.run(GroupEffects),
-    EffectsModule.run(UserEffects)
+    EffectsModule.run(UserEffects),
+    ButtonModule,
+    DropdownModule,
+    PanelModule
   ],
   providers: [
     AppService,

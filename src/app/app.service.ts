@@ -13,22 +13,34 @@ export class AppService {
     this.users['Kim'] = {
       userId: 'Kim',
       address: '29 avenue street',
+      postalcode: '930303',
       groups: [ 'group1', 'group2' ],
-      name: 'Kimserey'
+      firstname: 'Kimserey',
+      lastname: 'Lam',
+      homeNumber: '123214',
+      mobileNumber: '424144'
     };
 
     this.users['Mike'] = {
       userId: 'Mike',
       address: '103 eastern ed',
+      postalcode: '930303',
       groups: [ 'group2' ],
-      name: 'Mike'
+      firstname: 'Mike',
+      lastname: 'Johnson',
+      homeNumber: '654654654',
+      mobileNumber: '64364344'
     };
 
     this.users['Joe'] = {
       userId: 'Joe',
       address: '3 balcony dolet',
+      postalcode: '930303',
       groups: [ 'group1' ],
-      name: 'Joe'
+      firstname: 'Joe',
+      lastname: 'Polgiony',
+      homeNumber: '324342352',
+      mobileNumber: '532535235'
     };
 
     this.groups['group1'] = {

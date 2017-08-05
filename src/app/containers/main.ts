@@ -7,9 +7,17 @@ import * as fromRoot from '../reducers';
 
 @Component({
   template: `
-    <app-select-user></app-select-user>
-    <app-user-profile></app-user-profile>
-    <app-groups></app-groups>
+    <div class="container">
+      <div class="my-3">
+        <app-select-user></app-select-user>
+      </div>
+      <div class="my-3">
+        <app-user-profile></app-user-profile>
+      </div>
+      <div class="my-3">
+        <app-groups></app-groups>
+      </div>
+    </div>
   `,
   styles: []
 })

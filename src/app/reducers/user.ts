@@ -5,12 +5,14 @@ export interface State {
   users: string[];
   profile: Profile;
   failure: boolean;
+  editedField: string;
 }
 
 export const initialState: State = {
   users: [],
   profile: null,
-  failure: false
+  failure: false,
+  editedField: null
 };
 
 export function reducer(state = initialState, action: user.Actions) {
@@ -34,11 +36,18 @@ export function reducer(state = initialState, action: user.Actions) {
       });
     }
 
+    case user.EDIT_FIELD: {
+      return Object.assign({}, state, {
+        editedField: action.payload
+      });
+    }
+
     default: {
       return state;
     }
   }
 }
 
+export const getEditedField = (state: State) => state.editedField;
 export const getUsers = (state: State) => state.users;
 export const getProfile = (state: State) => state.profile;

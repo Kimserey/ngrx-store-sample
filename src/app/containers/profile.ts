@@ -8,16 +8,22 @@ import * as fromRoot from '../reducers';
 @Component({
   selector: 'app-user-profile',
   template: `
-    <app-profile [profile]="profile$ | async"></app-profile>
+    <app-profile [profile]="profile$ | async" [editedField]="editedField$ | async" (changeEditField)="changeEditField($event)"></app-profile>
   `,
   styles: []
 })
 export class ProfileContainer implements OnInit {
   profile$: Observable<Profile>;
+  editedField$: Observable<string>;
 
   constructor(private store: Store<fromRoot.State>) { }
 
   ngOnInit() {
     this.profile$ = this.store.select(fromRoot.getUserProfile);
+    this.editedField$ = this.store.select(fromRoot.getUserEditedField);
+  }
+
+  changeEditField(field) {
+    this.store.dispatch(new user.EditFieldAction(field));
   }
 }

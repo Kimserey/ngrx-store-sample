@@ -4,12 +4,11 @@ import { Group } from '../models/group';
 @Component({
   selector: 'app-group-listing',
   template: `
-    <div>
-      <strong>Groups</strong>
-    </div>
-    <ul>
-      <li *ngFor="let group of groups">{{group.name}}</li>
-    </ul>
+    <p-panel header="Groups">
+      <ul>
+        <li *ngFor="let group of groups">{{group.name}}</li>
+      </ul>
+    </p-panel>
   `
 })
 export class GroupListingComponent {

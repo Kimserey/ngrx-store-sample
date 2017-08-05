@@ -7,6 +7,7 @@ export const LOAD_ALL_SUCCESS = '[User] Load All Success';
 export const LOAD_ALL_FAIL = '[User] Load All Fail';
 export const LOAD_PROFILE_SUCCESS = '[User] Load Profile Success';
 export const LOAD_PROFILE_FAIL = '[User] Load Profile Fail';
+export const EDIT_FIELD = '[User] Edit Field';
 
 export class LoadAllAction implements Action {
   readonly type = LOAD_ALL;
@@ -44,10 +45,17 @@ export class LoadProfileFailAction implements Action {
   constructor(public payload?: any) { }
 }
 
+export class EditFieldAction implements Action {
+  readonly type = EDIT_FIELD;
+
+  constructor(public payload: string) { }
+}
+
 export type Actions
   = SelectAction
   | LoadAllAction
   | LoadAllSuccessAction
   | LoadAllFailAction
   | LoadProfileSuccessAction
-  | LoadProfileFailAction;
+  | LoadProfileFailAction
+  | EditFieldAction;
