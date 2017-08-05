@@ -8,7 +8,11 @@ import * as fromRoot from '../reducers';
 @Component({
   selector: 'app-user-profile',
   template: `
-    <app-profile [profile]="profile$ | async" [editedField]="editedField$ | async" (changeEditField)="changeEditField($event)"></app-profile>
+    <app-profile
+      [profile]="profile$ | async"
+      [editedField]="editedField$ | async"
+      (changeEditedField)="changeEditedField($event)">
+     </app-profile>
   `,
   styles: []
 })
@@ -23,7 +27,7 @@ export class ProfileContainer implements OnInit {
     this.editedField$ = this.store.select(fromRoot.getUserEditedField);
   }
 
-  changeEditField(field) {
+  changeEditedField(field) {
     this.store.dispatch(new user.EditFieldAction(field));
   }
 }

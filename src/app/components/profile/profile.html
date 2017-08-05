@@ -36,7 +36,7 @@
   <app-profile-address *ngIf="editedField === 'address'"
     [defaultAddress]="profile.address"
     [defaultPostalcode]="profile.postalcode"
-    (submitForm)="submitName($event)"
+    (submitForm)="submitAddress$event)"
     (cancelForm)="resetEdit()">
   </app-profile-address>
   <hr/>
@@ -57,7 +57,7 @@
   <app-profile-number *ngIf="editedField === 'number'"
     [defaultHomeNumber]="profile.homeNumber"
     [defaultMobileNumber]="profile.mobileNumber"
-    (submitForm)="submitName($event)"
+    (submitForm)="submitNumber($event)"
     (cancelForm)="resetEdit()">
   </app-profile-number>
 </p-panel>
